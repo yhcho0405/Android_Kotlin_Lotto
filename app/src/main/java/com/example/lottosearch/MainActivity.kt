@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,7 +13,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        button.setOnClickListener {
+        val lottoImageStartId = R.drawable.ball_01
+
+        fun updateLottoBallImage(result: List<Int>) {
+            if (result.size < 6) return
+
+            imageView1.setImageResource(lottoImageStartId + (result[0]) - 1)
+            imageView2.setImageResource(lottoImageStartId + (result[1]) - 1)
+            imageView3.setImageResource(lottoImageStartId + (result[2]) - 1)
+            imageView4.setImageResource(lottoImageStartId + (result[3]) - 1)
+            imageView5.setImageResource(lottoImageStartId + (result[4]) - 1)
+            imageView6.setImageResource(lottoImageStartId + (result[5]) - 1)
+        }
+
+        searchButton.setOnClickListener {
 
             fun checkBlank(): Boolean {
 
@@ -74,6 +88,36 @@ class MainActivity : AppCompatActivity() {
             }
 
             Toast.makeText(this, "good", Toast.LENGTH_SHORT).show()
+            var lottoNumbers = mutableListOf<Int>()
+            lottoNumbers.add(numberEditText1)
+            lottoNumbers.add(numberEditText2)
+            lottoNumbers.add(numberEditText3)
+            lottoNumbers.add(numberEditText4)
+            lottoNumbers.add(numberEditText5)
+            lottoNumbers.add(numberEditText6)
+
+            lottoNumbers.sort()
+
+            updateLottoBallImage(lottoNumbers)
+        }
+
+        randomButton.setOnClickListener {
+
+            fun getShuffleLottoNumbers(): MutableList<Int> {
+                var lottoNumbers = mutableListOf<Int>()
+
+                for (i in 1..45) {
+                    lottoNumbers.add(i)
+                }
+
+                lottoNumbers.shuffle()
+
+                lottoNumbers = lottoNumbers.subList(0, 6)
+                lottoNumbers.sort()
+
+                return lottoNumbers
+            }
+            updateLottoBallImage(getShuffleLottoNumbers())
         }
     }
 }
