@@ -75,7 +75,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:ems="10"
+        android:imeOptions="actionNext"
         android:inputType="numberSigned"
+        android:singleLine="true"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="@+id/guideline9" />
@@ -86,7 +88,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:ems="10"
+        android:imeOptions="actionNext"
         android:inputType="numberSigned"
+        android:singleLine="true"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toTopOf="@+id/guideline9" />
@@ -97,7 +101,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:ems="10"
+        android:imeOptions="actionNext"
         android:inputType="numberSigned"
+        android:singleLine="true"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toTopOf="@+id/guideline9" />
@@ -108,7 +114,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:ems="10"
+        android:imeOptions="actionNext"
         android:inputType="numberSigned"
+        android:singleLine="true"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintStart_toStartOf="@+id/guideline6"
         app:layout_constraintTop_toTopOf="@+id/guideline9" />
@@ -119,7 +127,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:ems="10"
+        android:imeOptions="actionNext"
         android:inputType="numberSigned"
+        android:singleLine="true"
         app:layout_constraintEnd_toStartOf="@+id/guideline8"
         app:layout_constraintStart_toStartOf="@+id/guideline7"
         app:layout_constraintTop_toTopOf="@+id/guideline9" />
@@ -131,6 +141,7 @@
         android:layout_margin="5dp"
         android:ems="10"
         android:inputType="numberSigned"
+        android:singleLine="true"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toTopOf="@+id/guideline9" />
