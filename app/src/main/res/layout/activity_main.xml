@@ -148,7 +148,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline9" />
 
     <Button
-        android:id="@+id/searchButton"
+        android:id="@+id/inputButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"

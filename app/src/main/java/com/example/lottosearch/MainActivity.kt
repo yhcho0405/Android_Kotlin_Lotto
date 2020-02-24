@@ -5,13 +5,14 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
-import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        var finalNumbers: MutableList<Int>
 
         val lottoImageStartId = R.drawable.ball_01
 
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity() {
             imageView6.setImageResource(lottoImageStartId + (result[5]) - 1)
         }
 
-        searchButton.setOnClickListener {
+        inputButton.setOnClickListener {
 
             fun checkBlank(): Boolean {
 
@@ -99,6 +100,7 @@ class MainActivity : AppCompatActivity() {
             lottoNumbers.sort()
 
             updateLottoBallImage(lottoNumbers)
+            finalNumbers = lottoNumbers
         }
 
         randomButton.setOnClickListener {
@@ -117,7 +119,17 @@ class MainActivity : AppCompatActivity() {
 
                 return lottoNumbers
             }
-            updateLottoBallImage(getShuffleLottoNumbers())
+            finalNumbers = getShuffleLottoNumbers()
+            updateLottoBallImage(finalNumbers)
+        }
+
+        resetButton.setOnClickListener {
+            editText1.setText(null)
+            editText2.setText(null)
+            editText3.setText(null)
+            editText4.setText(null)
+            editText5.setText(null)
+            editText6.setText(null)
         }
     }
 }
