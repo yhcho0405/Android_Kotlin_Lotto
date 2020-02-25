@@ -12,7 +12,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var finalNumbers: MutableList<Int>
+
+        var finalNumbers: MutableList<Int> = ArrayList()
 
         val lottoImageStartId = R.drawable.ball_01
 
@@ -130,6 +131,19 @@ class MainActivity : AppCompatActivity() {
             editText4.setText(null)
             editText5.setText(null)
             editText6.setText(null)
+        }
+
+        searchButton.setOnClickListener {
+            if (finalNumbers.size < 6) {
+                return@setOnClickListener
+            }
+            var myNum1: Int = finalNumbers[0]
+            var myNum2: Int = finalNumbers[1]
+            var myNum3: Int = finalNumbers[2]
+            var myNum4: Int = finalNumbers[3]
+            var myNum5: Int = finalNumbers[4]
+            var myNum6: Int = finalNumbers[5]
+
         }
     }
 }
