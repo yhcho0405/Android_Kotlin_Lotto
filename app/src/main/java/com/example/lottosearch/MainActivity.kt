@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Toast
+import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -143,6 +145,8 @@ class MainActivity : AppCompatActivity() {
             var myNum4: Int = finalNumbers[3]
             var myNum5: Int = finalNumbers[4]
             var myNum6: Int = finalNumbers[5]
+
+
 
         }
     }
